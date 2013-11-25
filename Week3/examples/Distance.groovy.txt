@@ -1,0 +1,33 @@
+/*
+Write a program that reads the X and Y coordinates of three points and then outputs which of the three are closer.
+Use the following class to store the data for the points:
+class Point 
+{
+double x;
+2
+double y;
+}
+*/
+
+
+
+class Point 
+{
+ double x;
+ double y;
+}
+
+
+Point firstCo = new Point()
+firstCo.x = 10.3
+firstCo.y = 11.10
+
+Point secondCo = new Point()
+secondCo.x = 9.5
+secondCo.y = 10.3
+
+Point thirdCo = new Point()
+thirdCo.x = 8.3
+thirdCo.y = 7.5
+
+//print firstCo.x

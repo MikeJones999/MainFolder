@@ -1,0 +1,53 @@
+/*Write a program that reads a text from the user and then enter a loop of requesting letters and counting them.
+The program stops if the user asks for the same letter twice.
+*/
+
+print "Please write a text: "
+String str = System.console().readLine()
+
+strLength = str.length()
+boolean complete = false
+char[] lastChar = new char[27]
+int arrayCount = lastChar.length
+int whileCount = 0
+int count 
+ 
+while (!complete)
+{
+  count = 0
+	 print "Which letter would you like to count now? "
+	 String strFind = System.console().readLine()
+	 char charToFind = strFind.charAt(0)
+	 
+
+	 for (int j = 0; j < arrayCount; j++)
+	 {
+	  if ( lastChar[j] == charToFind)
+	  {
+	  complete = true
+	  }
+	 } 
+	 
+	lastChar[whileCount] = charToFind
+	
+	 if (!complete)
+	 { 
+	 
+		for (int i = 0; i < strLength; i++)
+		{
+		  if (str.charAt(i) == 	charToFind)
+		  {
+		   count++
+		  
+		  }
+		}
+
+	
+	 println "There are " + count + " in your text"
+
+	 } else { 
+		 print "same character entered more than once: exit! "
+		 break
+		}
+whileCount++
+}//while loop

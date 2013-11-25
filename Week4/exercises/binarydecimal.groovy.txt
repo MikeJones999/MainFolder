@@ -1,0 +1,70 @@
+
+<!-- saved from url=(0062)http://77.100.249.219/MSc/PIJ/week4/week4/binarydecimal.groovy -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">/*
+Create a program in which you define the following methods:
+
+binary2decimal(String): takes from the user a binary number (with digits 0 and 1) and returns the corresponding
+number in decimal (base-10, with digits between 0 and 9). Hint: in the same way that you know that
+35 = 3 · 101 + 5 · 100, you can find that 100011 = 1 · 25 + 1 · 21 + 1 · 20.
+
+decimal2binary(int): the opposite of the previous one: takes a decimal number and returns the corresponding
+binary number. Hint: instead of multiplying by 2, you will need to divide by two this time.
+
+The program must offer a menu to the user with two options. The first one takes a binary number from the
+user and returns the corresponding decimal number. The second one does the opposite: takes a decimal number
+and returns a binary number. The program should use the methods defined.
+*/
+
+print "please insert a binary number to convert: "
+String str = System.console().readLine()
+
+
+int strLength = str.length()
+int total = 0
+int count = 0
+int binary = 0
+int midcount = 0
+String bin = ""
+
+
+if (strLength == 0)
+{
+ print "invalid line"
+}
+else if (strLength == 1)
+{
+ strLength = 1;
+}
+else if (strLength &gt;1)
+{
+ strLength = (strLength - 1)
+}
+
+
+for (i = strLength; i &gt; -1; i--)
+{
+   
+	bin = str.charAt(i)
+	binary = Integer.parseInt(bin)
+	if (bin == '0')  
+	{
+	total = total + binary
+	}
+	else
+	{
+	//println bin
+		
+	binary = Math.pow(2, count)
+		if (binary == 0)
+		{
+		 binary = 1
+		}
+	total = total + binary
+	}
+	
+	count++
+}
+
+
+//int total = Math.pow(2, 5)
+print total</pre></body></html>

@@ -1,0 +1,75 @@
+/*
+Write a program that reads a short string and then some longer text. The program must say how many times you
+can find the short string in the text. You cannot use any method of String apart from charAt() and length().
+*/
+
+print "Insert you string to find: "
+String ctrl = System.console().readLine()
+int ctrlLength = ctrl.length()
+println "length of your word is: " + ctrlLength
+
+print "Now insert your text to be searched: "
+String str = System.console().readLine()
+int strLength = str.length()
+println "length of your Line is: " + strLength
+
+
+String word = ""
+int count = 0
+boolean found = false
+
+
+//iterate through the string str - check words before spaces
+for (int i = 0; i < strLength; i++)
+{
+	
+	//if space not found construct words from characters
+	if (str.charAt(i) != ' ')
+	{
+	print str.charAt(i)	
+	word = word + str.charAt(i)	
+	
+	}else
+	
+	//if spcaes found, check what word came before it
+	     {
+	      word = CheckWord (word, ctrl)	     		
+	     }//else
+
+}
+
+//check after the last count of the string line
+ word = CheckWord (word, ctrl)
+
+
+//checks if two words are the same 
+String CheckWord (String newWord, String oldWord)
+{
+ String word = newWord
+ String ctrl = oldWord
+ int ctrlLength = ctrl.length()
+ 
+		  int count = 0
+		  int wordLength = word.length() 
+		      
+		  if (wordLength == ctrlLength)
+		  {		      
+		      for (int j = 0; j < wordLength; j++)
+		      {
+			if (word.charAt(j) == ctrl.charAt(j))
+			{			
+			   count++  
+		        } 	        
+		      }//for		      
+		               if (count == ctrlLength)
+		    		{
+		         	  print "\nWord Found: " + word + "\n"		         	 
+				}
+		  }else
+			{			
+			println ""			
+			}
+	//returns the string word as empty so you can check other strings
+	word = ""
+	word
+}

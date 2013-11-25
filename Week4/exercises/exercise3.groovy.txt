@@ -1,0 +1,66 @@
+
+<!-- saved from url=(0058)http://77.100.249.219/MSc/PIJ/week4/week4/exercise3.groovy -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">/* mortage calculator
+*/
+
+
+//amount to borrow
+//number of years
+//interest rate
+
+
+//number of payments = n years * 12 months
+//interest rate to decimal = n / 100
+
+//monthly interest rate = n decimal/ 12 months
+
+//convert mortage interest
+
+
+
+
+
+
+
+
+
+
+
+print "Please enter the amount you wish to borrow"
+String str = System.console().readLine()
+Double borrow = Double.parseDouble(str)
+
+print "Now enter the amount of years for which you wish to borrow"
+str = System.console().readLine()
+Double years = Double.parseDouble(str)
+
+print "Please enter the interest rate (fixed for the duration)"
+str = System.console().readLine()
+Double interest = Double.parseDouble(str)
+
+Double interestToPay = interestRate(interest)
+print interestToPay
+
+Double total = totalAmount(borrow, years, interestToPay)
+
+
+
+Double totalAmount (Double toBorrow, Double period, Double intRate)
+{
+ //interest over the years = toborrow interestRate * period 
+
+
+}
+
+/*
+Double interestRate (Double inRate)
+{
+inRate = inRate/100
+inRate
+}
+*/
+
+Double yearlyCost (Double toBorrow, DOuble period, Double inRate)
+{
+  
+}</pre></body></html>

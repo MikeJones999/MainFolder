@@ -1,0 +1,106 @@
+print "please insert math calculation: "
+String str = System.console().readLine()
+
+str = str.trim()
+
+String newStr
+String mathSign
+int mathPos
+
+//get length of the string to check later position of math sign
+int strLength = str.length()
+int option = 0
+
+
+//check for the specific math signs/character within the string
+for (int i = 0; i < strLength -1; i++)
+{
+	if (str.charAt(i) == '+')
+	{
+	  mathSign = "+"
+	  mathPos = i
+	  option = 1
+	} 
+	else if (str.charAt(i) == '-')
+	{
+	  mathSign = "-"
+	    mathPos = i
+	     option = 2
+	} 
+	else if (str.charAt(i) == '/')
+	{
+	  mathSign = "/"
+	    mathPos = i
+	     option = 3
+	} 
+	else if (str.charAt(i) == '*')
+	{
+	  mathSign = "*"
+	    mathPos = i
+	     option = 4
+	} 
+
+}
+println mathSign
+println mathPos
+
+
+//get the positions of the numerical values from the position of the maths sign
+String mathOne = str.substring(0,mathPos)
+String mathTwo = str.substring(mathPos + 1, strLength)
+
+//trim the spaces either side of the numerical value
+mathOne = mathOne.trim()
+mathTwo = mathTwo.trim()
+println mathOne
+println mathTwo
+
+
+int mathNumOne = Integer.parseInt(mathOne)
+int mathNumTwo = Integer.parseInt(mathTwo)
+
+
+//from the math sign identified - select option to perform calculation
+if (option == 1)
+{
+result = Addition(mathNumOne, mathNumTwo)
+} else if (option == 2)
+	{
+	result = Subtraction (mathNumOne, mathNumTwo)
+	}
+	else if (option == 3)
+	{
+	result = Multiplication (mathNumOne, mathNumTwo)
+	}
+	else if (option == 4)
+	{
+	result = Division (mathNumOne, mathNumTwo)
+	}
+	
+	
+print "\nResult is :" + result
+
+
+int Addition (int num1, int num2)
+{
+int total = num1 + num2
+total
+}
+
+int Subtraction (int num1, int num2)
+{
+int total = num1 - num2
+total
+}
+
+int Multiplication (int num1, int num2)
+{
+int total = num1 * num2
+total
+}
+
+int Division (int num1, int num2)
+{
+int total = num1 / num2
+total
+}

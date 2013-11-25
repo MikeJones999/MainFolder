@@ -1,0 +1,68 @@
+print "Please insert a number: "
+String str = System.console().readLine()
+int firstNum = Integer.parseInt(str)
+
+print "Please insert another number: "
+str = System.console().readLine()
+int secondNum = Integer.parseInt(str)
+
+println "\nWhat would you like to do: "
+println "Press 1: for addition"
+println "Press 2: for subtraction"
+println "Press 3: for multiplication"
+println "Press 4: for division"
+
+
+int result
+
+str = System.console().readLine()
+int option = Integer.parseInt(str)
+
+if (option == 1)
+{
+result = Addition(firstNum, secondNum)
+} else if (option == 2)
+	{
+	result = Subtraction (firstNum, secondNum)
+	}
+	else if (option == 3)
+	{
+	result = Multiplication (firstNum, secondNum)
+	}
+	else if (option == 4)
+	{
+	result = Division (firstNum, secondNum)
+	}
+	
+	
+print "\nResult is :" + result
+
+
+
+
+
+
+int Addition (int num1, int num2)
+{
+int total = num1 + num2
+total
+}
+
+int Subtraction (int num1, int num2)
+{
+int total = num1 - num2
+total
+}
+
+int Multiplication (int num1, int num2)
+{
+int total = num1 * num2
+total
+}
+
+int Division (int num1, int num2)
+{
+int total = num1 / num2
+total
+}
+
