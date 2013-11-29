@@ -3,7 +3,15 @@ public class OldPhone implements Phone
 {
 
 	private String[] arrayList = new String[10];
-
+	private String brand = null;
+	
+	
+	public OldPhone(String brand) 
+	{
+		this.brand = brand;
+	}
+	
+	
 	@Override
 	public void call(String number) 
 	{
@@ -60,9 +68,19 @@ public class OldPhone implements Phone
 	
 	public String[] getList()
 	{		
-		return arrayList;
-		
+		return arrayList;		
 	}
+	
+	
+
+	
+	
+	
+	public String getBrand() 
+	{
+		return brand;
+	}
+	
 	
 
 }

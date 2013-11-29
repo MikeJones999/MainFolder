@@ -2,15 +2,20 @@
 public class MobilePhone extends OldPhone
 {
 
+	public MobilePhone(String brand)
+	{
+		//when creating class object this will pass the brand onto the super of this class (OldPhone)
+		super(brand);		
+	}
+
 	public void ringAlarm(String alarmType)
 	{
 		System.out.println("Alarm Ringing - type: " + alarmType);
 	}
 
-	public void playGame(String gameName)
+	private void playGame(String gameName)
 	{
-		System.out.println("Playing game: " + gameName);
-		
+		System.out.println("Playing game: " + gameName);		
 	}
 	
 	
