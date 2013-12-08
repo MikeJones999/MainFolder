@@ -1,15 +1,16 @@
 
-public class PatientList 
+public class PatientList<T>
 {
-	public Patient top;
-	public Patient bottom;
+	public T top;
+	public T bottom;
 	
 	
 	public PatientList()
 	{	
 	}
 	
-	public void addPatient(Patient newPatient)
+	
+	public void addPatient(T newPatient)
 	{
 		if (isEmpty())
 		{
@@ -37,7 +38,7 @@ public class PatientList
 		else
 			{
 			
-				Patient holder = bottom;
+				T holder = bottom;
 				
 				while (!holder.getName().equals(name))
 				{						
@@ -98,5 +99,7 @@ public class PatientList
 		return false;		
 		
 	}
+
+
 	
 }

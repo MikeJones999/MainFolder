@@ -1,12 +1,12 @@
 
-public class Patient 
+public class Patient<T>
 {
 	private String name;
 	private String illness;
 	private int age;
 	
-	public Patient above;
-	public Patient below;
+	public T above;
+	public T below;
 	
 	
 	public void setName(String name)
@@ -39,8 +39,7 @@ public class Patient
 	{
 		return illness;		
 	}
-	
-	
+
 	
 	
 	

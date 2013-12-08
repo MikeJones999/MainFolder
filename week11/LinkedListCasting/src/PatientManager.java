@@ -54,6 +54,12 @@ public class PatientManager
 		System.out.println();
 		list1.printList();
 		
+		
+		//generics
+		
+		ListTypeChange<Patient> list2 = new PatientList<Patient>();
+		
+		
 	}
 	
 	
