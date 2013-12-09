@@ -13,13 +13,17 @@ public class NodeListAnything
 		//create a node list first
 		NodeList newNodeList = new NodeList();
 		
-		Node<String> newNode = new Node<String>();
-		
-		newNode.setName("Employee1");
-		
-		newNodeList.addNode(newNode);
+		Node<String> newNode1 = new Node<String>();		
+		newNode1.setName("Employee1");		
+		newNodeList.addNode(newNode1);
+
+		Node<String> newNode2 = new Node<String>();		
+		newNode2.setName("Employee2");		
+		newNodeList.addNode(newNode2);
 		
 		newNodeList.printList();
+		
+		
 	
 	}
 
