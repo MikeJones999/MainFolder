@@ -20,8 +20,7 @@ public class NodeList
 		}
 		else
 			{
-			 	top.setAbove(newNode);
-			 	
+			 	top.setAbove(newNode);			 	
 			 	newNode.setBelow(top);			 	
 			 	top = newNode;							 	
 			}
@@ -29,7 +28,7 @@ public class NodeList
 	}
 	
 	
-	public void removePatient(String name)
+	public void removeNode(String name)
 	{
 		if (isEmpty())
 		{
@@ -61,7 +60,7 @@ public class NodeList
 				
 				if (holder.getAbove() == null)
 				{		
-					holder.below.above = null;
+					holder.getBelow().setAbove(null);
 					top.setBelow(holder.getBelow().getAbove());
 					top.setBelow (holder.getBelow().getAbove());				
 					top = holder.getBelow();					
@@ -70,7 +69,7 @@ public class NodeList
 				if (holder.getBelow() != null && holder.getAbove() != null)
 				{
 					holder.getAbove().setBelow(holder.getBelow());
-					holder.getBelow().setAbove(holder.getAbove);
+					holder.getBelow().setAbove(holder.getAbove());
 				}		
 							
 			}
