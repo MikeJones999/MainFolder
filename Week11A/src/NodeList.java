@@ -10,20 +10,20 @@ public class NodeList
 	}
 	
 	
-	public void addPatient(Node newPatient)
+	public void addNode(Node newNode)
 	{
 		if (isEmpty())
 		{
 			
-			this.top = newPatient;	
-			this.bottom = newPatient;	
+			this.top = newNode;	
+			this.bottom = newNode;	
 		}
 		else
 			{
-			 	top.setAbove(newPatient);
+			 	top.setAbove(newNode);
 			 	
-			 	newPatient.setBelow(top);			 	
-			 	top = newPatient;							 	
+			 	newNode.setBelow(top);			 	
+			 	top = newNode;							 	
 			}
 
 	}
@@ -53,23 +53,24 @@ public class NodeList
 				{
 					bottom.setBelow(holder.getAbove());
 					
-					holder.above.below = null;
+					//holder.above.below = null;
 					holder.getAbove().setBelow(null);
 					///////////////////////////////////////here
-					bottom = holder.above;		
+					bottom = holder.getAbove();		
 				}
 				
-				if (holder.above == null)
+				if (holder.getAbove() == null)
 				{		
 					holder.below.above = null;
-					top.below = holder.below.above;				
-					top = holder.below;					
+					top.setBelow(holder.getBelow().getAbove());
+					top.setBelow (holder.getBelow().getAbove());				
+					top = holder.getBelow();					
 				}
 			
-				if (holder.below != null && holder.above != null)
+				if (holder.getBelow() != null && holder.getAbove() != null)
 				{
-					holder.above.below = holder.below;
-					holder.below.above = holder.above;
+					holder.getAbove().setBelow(holder.getBelow());
+					holder.getBelow().setAbove(holder.getAbove);
 				}		
 							
 			}
@@ -81,13 +82,13 @@ public class NodeList
 	
 	public void printList()
 	{
-		Patient holder = bottom;
+		Node holder = bottom;
 	
 		
 		while (holder != null)
 		{
 			System.out.println(holder.getName());
-			holder = holder.above;			
+			holder = holder.getAbove();			
 		}
 		
 	}

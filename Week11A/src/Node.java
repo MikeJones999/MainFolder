@@ -34,7 +34,7 @@ public class Node<T>
 		
 	}
 	
-	public void set(T name)
+	public void setName(T name)
 	{
 		this.anything = name;		
 	}
