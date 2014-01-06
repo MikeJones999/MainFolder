@@ -1,0 +1,20 @@
+
+public class HashRun
+{
+
+	private HashUtilities myHashMap;
+	
+	public static void main(String[] args)
+	{
+		new HashRun().start();
+		
+	}
+	
+	public void start()
+	{
+	
+		
+		
+	}
+	
+}

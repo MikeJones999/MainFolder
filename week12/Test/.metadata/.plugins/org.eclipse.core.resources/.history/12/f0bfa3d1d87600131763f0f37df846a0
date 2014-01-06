@@ -1,0 +1,14 @@
+
+public class ShortHash
+{
+	
+	
+	public int getHash(String name)
+	{
+		int num = name.hashCode();
+		num = num % 999;
+		return num;		
+	}
+	
+
+}

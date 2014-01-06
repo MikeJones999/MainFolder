@@ -1,0 +1,27 @@
+
+public class Node 
+{
+	private Persons holder;
+	
+	public Node ()
+	{
+		
+			
+	}
+	
+	public void addPerson(Persons person)
+	{
+		this.holder = person;		
+	}
+	
+	
+	
+	
+	public void addNode()
+	{
+		
+		
+	}
+	
+	
+}

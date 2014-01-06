@@ -1,0 +1,22 @@
+
+public class HashRun
+{
+
+	private HashUtilities myHashMap;
+	
+	public static void main(String[] args)
+	{
+		new HashRun().start();
+		
+	}
+	
+	public void start()
+	{
+		myHashMap = new HashUtilities(30);
+		
+		System.out.println("the map is empty: " + myHashMap.isEmpty());
+		
+		
+	}
+	
+}

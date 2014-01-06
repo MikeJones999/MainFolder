@@ -1,0 +1,34 @@
+
+public class HashRun
+{
+
+	private SimpleMap map;
+	private HashUtilities myHashMap;
+	
+	
+	public HashRun()
+	{
+		map = new HashUtilities(30);
+		
+	}
+	
+	
+	
+	public static void main(String[] args)
+	{
+		new HashRun().start();
+		
+	}
+	
+	public void start()
+	{
+	
+		ShortHash key = new ShortHash();
+		int num = key.getHash("Mike");
+		map.put(num, "mike");
+	
+		
+		
+	}
+	
+}

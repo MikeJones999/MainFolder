@@ -1,0 +1,20 @@
+
+public class Node 
+{
+	
+	
+	public Node ()
+	{
+		
+		
+	}
+	
+	
+	public void addNode()
+	{
+		
+		
+	}
+	
+	
+}

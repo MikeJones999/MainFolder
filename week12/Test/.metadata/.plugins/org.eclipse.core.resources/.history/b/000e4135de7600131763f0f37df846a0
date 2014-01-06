@@ -1,0 +1,20 @@
+
+public class NodeList
+{
+	
+	
+	
+	public static void main(String[] args)
+	{
+		NodeList temp = new NodeList();
+		temp.start();		
+	}
+	
+	public void start()
+	{
+		
+		
+		
+	}
+	
+}
