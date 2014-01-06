@@ -7,6 +7,7 @@ public class TestShortHash
 	@Test
 	public void testHashUtilities()
 	{
+
 		Random rnd = new Random (1000000);
 		for (int i = 0; i < 2000; i++)
 		{
@@ -15,6 +16,7 @@ public class TestShortHash
 			assertTrue(result >= 0 && result <= 500);
 		
 		}
+	
 	}
 
 

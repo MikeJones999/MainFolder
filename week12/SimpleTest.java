@@ -9,10 +9,15 @@ public class SimpleTest
 	public void testsNormalName()
 	{
 		Person p = new Person();
-		String input = "Dereck Robert Yssirt";
+		String input = "Dereck Robert          Yssirt";
 		String output = p.getInitials(input);
 		String expected = "DRY";
 		assertEquals(output, expected);
 	}
 	
+	
+	
 }
+
+//javac SimpleTest.java
+//org.junit.runner.JUnitCore SimpleTest

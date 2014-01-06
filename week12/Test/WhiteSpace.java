@@ -1,8 +1,11 @@
-public class Person
-{		
-	public String getInitials(String fullName)
-	{
-	String fullname = "Mike Anthony  Jones";
+	
+public class WhiteSpace	
+{	
+		
+		public static void main(String[] args)
+		{
+		
+			String fullname = "Mike Anthony  Jones";
 			String copy = "";
 			int copyLength = fullname.length();
 			int spaceCount = 0;
@@ -39,5 +42,5 @@ public class Person
 				result = result + nextInitial.toUpperCase();
 			}
 			System.out.println(result);
-	}
+		}
 }
