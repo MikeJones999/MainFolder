@@ -17,24 +17,10 @@ public class NodeManager
 		n1.setName("Dave");
 		Node n2 = new Node();
 		n2.setName("Mike");
-		Node n3 = new Node();
-		n3.setName("John");
-		
-		
 		nodeHolder.addNode(n1);
 		nodeHolder.addNode(n2);
-		nodeHolder.addNode(n3);
 		
-		nodeHolder.printNodeList();
-		
-		//System.out.println(n1.getName());
-		//System.out.println(n2.getName());
-		//System.out.println(n3.getName());
-		
-		nodeHolder.removeNode(n1);
-		nodeHolder.removeNode(n3);
-		
-		
-		nodeHolder.printNodeList();
+		System.out.println(n1.getAbove().getName());
+		System.out.println(n2.getBelow().getName());
 	}
 }

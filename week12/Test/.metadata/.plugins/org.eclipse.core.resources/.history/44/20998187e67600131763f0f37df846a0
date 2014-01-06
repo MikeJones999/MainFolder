@@ -39,27 +39,16 @@ public class NodeList
 					
 			if (oldNode.getBelow() != null)
 			{
-				oldNode.getBelow().setAbove(oldNode.getAbove());
-			} 
-			else
-				{
-					oldNode.getAbove().setBelow(null);
-					this.bottom = oldNode.getAbove();
-				}
+			oldNode.getBelow().setAbove(oldNode.getAbove());
+			}
 			
 			if(oldNode.getAbove() != null)
 			{
 			oldNode.getAbove().setBelow(oldNode.getBelow());
 			}
-			else
-			{
-				oldNode.getBelow().setAbove(null);
-				this.top = oldNode.getBelow();
-				
-			}
-		
-			System.out.println(oldNode.getName() + " has been removed");
+			
 			oldNode = null;
+		
 		}
 		else
 		{
@@ -69,23 +58,6 @@ public class NodeList
 		
 		
 	}
-	
-	
-	public void printNodeList()
-	{
-		Node temp = new Node();
-		temp = this.bottom;
-		int count = 0;
-		while(temp != null)
-		{
-			System.out.println("Node at position " + count + " is: " + temp.getName());
-			temp = temp.getAbove();
-			count = count + 1;
-		}
-		
-		
-	}
-	
 	
 	
 	public boolean isEmpty()

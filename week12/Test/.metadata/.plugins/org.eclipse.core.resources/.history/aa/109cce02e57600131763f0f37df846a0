@@ -5,15 +5,10 @@ public class Node
 	private Node above;
 	private Node below;
 	
-	public Node ()
-	{		
-			
-	}
-	
-	public void setName(String name)
+	public Node (String name)
 	{
 		this.name = name;
-		
+			
 	}
 	
 	public void setAbove(Node newNode)

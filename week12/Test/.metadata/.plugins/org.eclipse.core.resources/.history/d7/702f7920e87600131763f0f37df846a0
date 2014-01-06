@@ -39,24 +39,14 @@ public class NodeList
 					
 			if (oldNode.getBelow() != null)
 			{
-				oldNode.getBelow().setAbove(oldNode.getAbove());
-			} 
-			else
-				{
-					oldNode.getAbove().setBelow(null);
-					this.bottom = oldNode.getAbove();
-				}
+			oldNode.getBelow().setAbove(oldNode.getAbove());
+			}
 			
 			if(oldNode.getAbove() != null)
 			{
 			oldNode.getAbove().setBelow(oldNode.getBelow());
 			}
-			else
-			{
-				oldNode.getBelow().setAbove(null);
-				this.top = oldNode.getBelow();
-				
-			}
+			
 		
 			System.out.println(oldNode.getName() + " has been removed");
 			oldNode = null;
