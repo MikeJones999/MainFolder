@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TestShortHash 
 {
-	@Test
+	@Test(timeout = 1000)
 	public void testHashUtilities()
 	{
 
@@ -13,7 +13,7 @@ public class TestShortHash
 		{
 			int result = HashUtil.shortHash(rnd.nextInt());
 			System.out.println("Testing " + result);
-			assertTrue(result >= 0 && result <= 500);
+			assertTrue(result >= 0 && result <= 2000);
 		
 		}
 	
