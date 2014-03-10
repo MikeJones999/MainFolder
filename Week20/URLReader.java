@@ -1,6 +1,10 @@
 
 
 import java.net.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.io.*;
 /**
  * 
@@ -10,20 +14,67 @@ import java.io.*;
  */
 public class URLReader 
 {
+	private Set<String> foundPages = new HashSet<String>();
+	private Set<String> foundEmails = new HashSet<String>();
+	
+	
+	public URLReader(String webpage)
+	{
+		 			URL oracle;
+				try {
+						oracle = new URL(webpage);		 			
+		     			BufferedReader in;		
+						in = new BufferedReader(new InputStreamReader(oracle.openStream()));
+				
+				    	String inputLine;
+		    	        while ((inputLine = in.readLine()) != null)        
+		    	        {
+		    	        	
+		    	        	String[] arrayString = inputLine.split("\"");        	
+		    	        	String result = this.findHTTP(arrayString);
+		    	          //  System.out.println(inputLine);
+		    	            
+		    	        }   
+		    	        in.close();
+					}
+	    	    	catch (MalformedURLException e)	    	    			
+					{
+					// TODO Auto-generated catch block
+	    	    		System.out.println("***DEBUG**** MalformedURLException URLReader bad url: " + webpage);
+	    	    		e.printStackTrace();
+					}
+					catch (IOException e)
+					{
+						System.out.println("***DEBUG**** IOException URLReader bad url: " + webpage);
+					}
+	}
+	
+	
+	
+	public Set<String> getFoundPages()
+	{
+		return foundPages;
+	}
+	
+	public Set<String> getFoundEmails()
+	{
+		return foundEmails;
+	}
+	
+	/*
     public static void main(String[] args) throws Exception 
     {
 
-       //URL oracle = new URL("http://www.oracle.com/");
+      // URL oracle = new URL("http://www.oracle.com/");
       //URL oracle = new URL("http://www.sistersofspam.co.uk/Scam_Email_Addresses_1.php/");
-       //URL oracle = new URL("http://www.cyndislist.com");
+      //URL oracle = new URL("http://www.cyndislist.com");
         //URL oracle = new URL("http://www.which.co.uk/about-which/contact-us/");
         //URL oracle = new URL("http://www.jisc.ac.uk/contact");
-        URL oracle = new URL("http://www.bbk.ac.uk/contact-us");
+        //URL oracle = new URL("http://www.bbk.ac.uk/contact-us");
     	
     	
         BufferedReader in = new BufferedReader(
         new InputStreamReader(oracle.openStream()));
-        URLReader manager = new URLReader();
         String inputLine;
         while ((inputLine = in.readLine()) != null)        
         {
@@ -35,7 +86,7 @@ public class URLReader
         }   
         in.close();
     }
-
+	 */
 
     public String findHTTP(String[] stringLine)
     {
@@ -49,12 +100,13 @@ public class URLReader
     			//System.out.println("***DEBUG*** less than 7: " + element );
 	    		if (element.substring(0,4).equals("http"))
 	    		{
-	    			//System.out.println("*********DEBUG*********WebSite found: " + element);
+	    			System.out.println("*********DEBUG*********WebSite found: " + element);
 	    			line = element;
+	    			foundPages.add(element);
 	    		}  
 	    		
 	    		
-	    		System.out.println("***DEBUG*** Char 1: " + element.charAt(1));
+	    		//System.out.println("***DEBUG*** Char 1: " + element.charAt(1));
 	    		if (element.contains("@"))
 	    		{	   
 	    			
@@ -89,25 +141,27 @@ public class URLReader
 						    			}
 				    				}	    		
 				    			
-				    			System.out.println("***DEBUG*** No cut: " + element);
+				    			//System.out.println("***DEBUG*** No cut: " + element);
 				    				//check for spaces
 				    				if (element.contains(" "))
 				    				{
 				    					int newPos = returnPositionSpaceBack(element, pos);
 				    					element = element.substring(newPos+1);
-				    					System.out.println("***DEBUG*** First cut: " + element);
+				    					//System.out.println("***DEBUG*** First cut: " + element);
 				   
 				    					newPos = returnPositionSpaceForward(element, pos);
 				    					element = element.substring(0,newPos);
-				    					System.out.println("***DEBUG*** Second cut: " + element);
+				    					//System.out.println("***DEBUG*** Second cut: " + element);
 				    				}
-				    				System.out.println("*********DEBUG*********Email found: " + element);
-				    			 }
+				    				//System.out.println("*********DEBUG*********Email found: " + element);
+				    				foundEmails.add(element);
+				    				
+				    			}
 				    		
 	    				}
 	    				catch (Exception e)
 	    					{
-	    						System.out.println("caught: ");
+	    						System.out.println("caught: URLREADER page");
 	    					}
 	    		}	
     		}
